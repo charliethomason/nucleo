@@ -1,10 +1,10 @@
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/styles/nucleo.scss",
-  output: {
-    path: __dirname + "/dist",
+  entry: {
+    nucleo: "./src/styles/nucleo.scss"
   },
   module: {
     rules: [
@@ -19,6 +19,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    })
   ]
 };

@@ -1,3 +1,3 @@
 # Nucleo
 
-An open source front-end toolkit
+An open source front-end toolkit focused on simplicity and accessibility
