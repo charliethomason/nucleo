@@ -1,5 +1,4 @@
 module.exports = {
-  mode: "development",
   entry: {
     nucleo: "./src/scripts/nucleo.js"
   },
@@ -10,7 +9,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         exclude: /node_modules/
       }
     ]

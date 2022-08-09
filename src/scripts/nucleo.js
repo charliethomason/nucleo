@@ -1,14 +1,13 @@
-const nucleo = nucleo || {};
-nucleo.init = function() {
-  function init() {
-    console.log("Hello World");
+class Nucleo {
+  constructor(el) {
+    this.el = el;
   }
-  init();
-}
-nucleo.isReady = function() {
-  if (document.readyState !== 'loading'){
-    nucleo.init();
-  } else {
-    document.addEventListener('DOMContentLoaded', nucleo.init);
+  get init() {
+    return this.initNucleo();
+  }
+  initNucleo() {
+    return this.el;
   }
 }
+
+export default Nucleo;
