@@ -1,8 +1,9 @@
 {
-  "name": "nucleo",
+  "name": "nucleo-toolkit",
   "version": "1.0.0",
   "description": "An open source front-end toolkit",
   "author": "Charlie Thomason <thomason.charlie@gmail.com>",
+  "main": "src/index.js",
   "license": "ISC",
   "scripts": {
     "dev": "webpack serve --config webpack.config.dev.js",

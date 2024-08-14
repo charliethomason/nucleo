@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 
 import "../src/styles/nucleo.scss";
 
-import { Button } from "../src/components/index.js";
+import { Button } from "../src/index.js";
 
 const App = () => {
   return (
