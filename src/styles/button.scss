@@ -1,0 +1,19 @@
+.btn {
+  background-color: $cloud-grey;
+  border: 2px solid $cloud-grey;
+  border-radius: 4px;
+  color: $charcoal-grey;
+  font: 14px/20px Arial, sans-serif;
+  padding: 5px 10px;
+
+  &:hover, &:focus {
+    background-color: $alabaster-grey;
+    border-color: $jade-green;
+  }
+
+  &:disabled {
+    background-color: $alabaster-grey;
+    border-color: $alabaster-grey;
+    color: $smoke-grey;
+  }
+}
