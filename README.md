@@ -1,3 +1,3 @@
 # Nucleo
 
-An open source front-end toolkit focused on simplicity and accessibility
+A front-end toolkit built with React, focused on simplicity and accessibility

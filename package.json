@@ -1,7 +1,7 @@
 {
   "name": "nucleo-toolkit",
-  "version": "1.0.0",
-  "description": "An open source front-end toolkit",
+  "version": "1.0.1",
+  "description": "A front-end toolkit built with React, focused on simplicity and accessibility",
   "author": "Charlie Thomason <thomason.charlie@gmail.com>",
   "main": "src/index.js",
   "license": "ISC",
