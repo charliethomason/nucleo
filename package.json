@@ -1,9 +1,13 @@
 {
   "name": "nucleo-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A front-end toolkit built with React, focused on simplicity and accessibility",
   "author": "Charlie Thomason <thomason.charlie@gmail.com>",
-  "main": "src/index.js",
+  "main": "./dist/components.js",
+  "exports": {
+    ".": "./dist/components.js",
+    "./nucleo.css": "./dist/nucleo.css"
+  },
   "license": "ISC",
   "scripts": {
     "dev": "webpack serve --config webpack.config.dev.js",
