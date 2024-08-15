@@ -1,11 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Button = ({ children, type, onClick, disabled, className }) => { 
+export const Button = ({ children, type, onClick, disabled, className }) => {
+  const handleClick = e => {
+    if (!disabled && onClick) {
+      onClick(e);
+    }
+  }
   return (
     <button
       type={type}
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
       className={`btn ${className}`}
     >
@@ -16,7 +21,7 @@ export const Button = ({ children, type, onClick, disabled, className }) => {
 Button.propTypes = {
   children: PropTypes.any,
   type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool
 };
 Button.defaultProps = {
