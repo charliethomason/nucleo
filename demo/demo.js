@@ -1,10 +1,10 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-import '../src/styles/nucleo.scss';
-import './demo.css';
+import "../src/styles/nucleo.scss";
+import "./demo.css";
 
-import { Button, OtpInput } from '../src/index.js';
+import { Button, OtpInput } from "../src/index.js";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <h1>Nucleo Toolkit</h1>
       <h2>Button</h2>
       <div className="canvas">
-        <Button onClick={() => alert('Hello, World!')}>Button</Button>
+        <Button onClick={() => alert("Hello, World!")}>Button</Button>
       </div>
       <div className="canvas">
         <Button disabled>Disabled</Button>
@@ -24,6 +24,6 @@ const App = () => {
   );
 };
 
-const wrapper = document.getElementById('app');
+const wrapper = document.getElementById("app");
 const root = createRoot(wrapper);
 root.render(<App />);

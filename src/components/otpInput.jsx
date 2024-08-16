@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { keyCodes } from '../utils/keyCodes';
+import React, { useState, useRef, useEffect } from "react";
+import { keyCodes } from "../utils/keyCodes";
+import "../styles/otpInput.scss";
 
 export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
-  const [otp, setOtp] = useState('');
+  const [otp, setOtp] = useState("");
   const [readyToCheck, setReadyToCheck] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
   const inputRefs = useRef([]);
@@ -13,11 +14,11 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
 
   const updateInput = () => {
     const inputValue = inputRefs.current.reduce((acc, input) => {
-      acc += input?.value.length ? input.value : ' ';
+      acc += input?.value.length ? input.value : " ";
       return acc;
-    }, '');
+    }, "");
     setOtp(inputValue);
-    setReadyToCheck(inputRefs.current.every((input) => input?.value !== ''));
+    setReadyToCheck(inputRefs.current.every((input) => input?.value !== ""));
   };
 
   const handleInput = (index) => (e) => {
@@ -48,9 +49,9 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
 
   const handlePaste = (e) => {
     e.preventDefault();
-    const pastedData = e.clipboardData.getData('text').slice(0, inputQty);
+    const pastedData = e.clipboardData.getData("text").slice(0, inputQty);
 
-    pastedData.split('').forEach((char, index) => {
+    pastedData.split("").forEach((char, index) => {
       if (index < inputQty) {
         const input = inputRefs.current[index];
         if (input) {
@@ -75,16 +76,16 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
       }
     }
     if (inputRefs.current[inputQty - 1]) {
-      inputRefs.current[inputQty - 1].value = '';
+      inputRefs.current[inputQty - 1].value = "";
     }
     updateInput();
   };
 
   const resetForm = () => {
     inputRefs.current.forEach((input) => {
-      if (input) input.value = '';
+      if (input) input.value = "";
     });
-    setOtp('');
+    setOtp("");
     setReadyToCheck(false);
   };
 
@@ -100,39 +101,37 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
       const isMatch = checkOtp(otp);
       onSubmit?.(otp, isMatch);
       if (!isMatch) {
-        alert('Incorrect OTP');
+        alert("Incorrect OTP");
         resetForm();
       } else {
-        alert('Success');
+        alert("Success");
         resetForm();
       }
     } else {
-      alert('Please fill in all fields');
+      alert("Please fill in all fields");
     }
   };
 
   return (
     <form className="otp-form" onSubmit={submitOtp}>
-      {Array.from({ length: inputQty }).map((_, index) => (
-        <input
-          key={index}
-          ref={(el) => (inputRefs.current[index] = el)}
-          type="number"
-          className={`otp-input ${isCorrect === false ? 'incorrect' : ''}`}
-          maxLength={1}
-          pattern="\d*"
-          id={`otp-input-${index}`}
-          onChange={handleInput(index)}
-          onKeyDown={handleKeyDown(index)}
-          onPaste={handlePaste}
-        />
-      ))}
-      <input type="hidden" name="otp" value={otp} />
-      <button
-        type="submit"
-        className="otp-submit-btn"
-        id="otp-submit-btn"
-        disabled={!readyToCheck}>
+      <div className="otp-input-container">
+        {Array.from({ length: inputQty }).map((_, index) => (
+          <input
+            key={index}
+            ref={(el) => (inputRefs.current[index] = el)}
+            type="number"
+            className={`otp-input ${isCorrect === false ? "incorrect" : ""}`}
+            maxLength={1}
+            pattern="\d*"
+            id={`otp-input-${index}`}
+            onChange={handleInput(index)}
+            onKeyDown={handleKeyDown(index)}
+            onPaste={handlePaste}
+          />
+        ))}
+        <input type="hidden" name="otp" value={otp} />
+      </div>
+      <button type="submit" className="otp-submit-btn" disabled={!readyToCheck}>
         Submit
       </button>
     </form>
