@@ -1,18 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { classNames } from "../utils/classnames";
 
-export const Button = ({ children, type, onClick, disabled, className }) => {
-  const handleClick = e => {
-    if (!disabled && onClick) {
-      onClick(e);
-    }
-  }
+const SIZES = {
+  sm: "sm",
+  default: "md",
+  lg: "lg"
+};
+export const Button = ({
+  children = "",
+  type = "button",
+  size = SIZES.default,
+  onClick = () => {},
+  disabled = false,
+  pressed = false,
+  className = ""
+}) => {
+  const btnClasses = classNames("btn", className, {
+    [`btn--${size}`]: !!size,
+    "pressed": pressed
+  });
   return (
     <button
       type={type}
-      onClick={handleClick}
+      onClick={onClick}
       disabled={disabled}
-      className={`btn ${className}`}
+      className={btnClasses}
     >
       {children}
     </button>
@@ -21,10 +34,9 @@ export const Button = ({ children, type, onClick, disabled, className }) => {
 Button.propTypes = {
   children: PropTypes.any,
   type: PropTypes.oneOf(["button", "submit"]),
+  size: PropTypes.oneOf(Object.values(SIZES)),
   onClick: PropTypes.func,
-  disabled: PropTypes.bool
-};
-Button.defaultProps = {
-  type: "button",
-  className: ""
+  disabled: PropTypes.bool,
+  pressed: PropTypes.bool,
+  className: PropTypes.string
 };

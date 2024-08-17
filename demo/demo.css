@@ -21,3 +21,6 @@ h2 {
 .canvas {
   padding: 10px 0;
 }
+.canvas + h2 {
+  margin-top: 20px;
+}
