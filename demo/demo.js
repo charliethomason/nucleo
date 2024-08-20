@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import "../src/styles/nucleo.scss";
 import "./demo.css";
 
-import { Button, classNames } from "../src/index.js";
+import { Button, classNames, OtpInput } from "../src/index.js";
 
 const App = () => {
   const int = 3;
@@ -41,6 +41,10 @@ const App = () => {
         {dynamicClassNames}<br />
         {anotherClass}
       </div>
+        <h2>OtpInput</h2>
+        <div className="canvas">
+          <OtpInput length={6} onChange={console.log} />
+        </div>
     </main>
   )
 };
