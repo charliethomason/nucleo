@@ -1,6 +1,6 @@
 {
   "name": "nucleo-toolkit",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A front-end toolkit built with React, focused on simplicity and accessibility",
   "author": "Charlie Thomason <thomason.charlie@gmail.com>",
   "main": "./dist/components.js",

@@ -13,7 +13,7 @@ A front-end toolkit built with React, focused on simplicity and accessibility
 ### CSS Styles
 
 ```jsx
-import 'nucleo-toolkit/nucleo.css';
+import "nucleo-toolkit/nucleo.css";
 ```
 
 Includes a CSS reset inspired by [Eric Meyer's Reset](https://meyerweb.com/eric/tools/css/reset/).
@@ -21,7 +21,7 @@ Includes a CSS reset inspired by [Eric Meyer's Reset](https://meyerweb.com/eric/
 ### Button
 
 ```jsx
-import { Button } from 'nucleo-toolkit';
+import { Button } from "nucleo-toolkit";
 ```
 
 **Props:**
@@ -82,7 +82,7 @@ classNames(
 ### OtpInput
 
 ```jsx
-import { OtpInput } from 'nucleo-toolkit';
+import { OtpInput } from "nucleo-toolkit";
 ```
 
 **Props:**
