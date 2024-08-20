@@ -4,16 +4,16 @@ A front-end toolkit built with React, focused on simplicity and accessibility
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/en) v18+
-* [React](https://react.dev/) v16+
-* [PropTypes](https://www.npmjs.com/package/prop-types) v15+
+- [Node.js](https://nodejs.org/en) v18+
+- [React](https://react.dev/) v16+
+- [PropTypes](https://www.npmjs.com/package/prop-types) v15+
 
 ## Usage
 
 ### CSS Styles
 
 ```jsx
-import "nucleo-toolkit/nucleo.css";
+import 'nucleo-toolkit/nucleo.css';
 ```
 
 Includes a CSS reset inspired by [Eric Meyer's Reset](https://meyerweb.com/eric/tools/css/reset/).
@@ -21,7 +21,7 @@ Includes a CSS reset inspired by [Eric Meyer's Reset](https://meyerweb.com/eric/
 ### Button
 
 ```jsx
-import { Button } from "nucleo-toolkit";
+import { Button } from 'nucleo-toolkit';
 ```
 
 **Props:**
@@ -78,6 +78,20 @@ classNames(
 );
 // returns "btn active test"
 ```
+
+### OtpInput
+
+```jsx
+import { OtpInput } from 'nucleo-toolkit';
+```
+
+**Props:**
+
+`inputQty` (default: 6)<br>
+The number of input fields to display
+
+`correctOtp`<br>
+The correct OTP to compare against
 
 ## Demo
 
