@@ -1,12 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { classNames } from "../utils/classnames";
+import { SIZES } from "../utils/sizes";
 
-const SIZES = {
-  sm: "sm",
-  default: "md",
-  lg: "lg"
-};
 export const Button = ({
   children = "",
   type = "button",

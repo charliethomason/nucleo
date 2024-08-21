@@ -15,12 +15,12 @@ export function classNames() {
   if (!arguments.length) return "";
 
   const args = Array.from(arguments);
-  const classes = args.reduce((str, cls) => {
+  const classes = args.reduce((arr, cls) => {
     const newClass = getClass(cls);
     if (!!newClass) {
-      str += ` ${newClass}`;
+      arr.push(newClass);
     }
-    return str;
-  }, "");
-  return classes;
+    return arr;
+  }, []);
+  return classes.join(" ");
 };
