@@ -54,6 +54,81 @@ Applies a classname of `pressed` to the button, making it appear `:active`.
 `className` (string)<br>
 One or more optional classnames to apply to the button.
 
+### OtpInput
+
+```jsx
+import { OtpInput } from "nucleo-toolkit";
+```
+
+**Props:**
+
+`inputQty` (default: 6)<br>
+The number of input fields to display
+
+`correctOtp`<br>
+The correct OTP to compare against
+
+### Input
+
+```jsx
+import { Input } from "nucleo-toolkit";
+```
+
+**Props**
+
+`type` (default = "text")<br>
+Sets the `type` attribute on the input. Use "textarea" for `<textarea />`. Options: "text", "textarea", "password", "number", "email", "search", "tel"
+
+`value` (string or number)<br>
+Sets the `value` attribute on the input.
+
+`placeholder` (string)<br>
+Sets the `placeholder` attribute on the input.
+
+`onChange` (function)<br>
+Function called when typing in the input.
+
+`onFocus` (function)<br>
+Function called when the input receives focus.
+
+`onBlur` (function)<br>
+Function called when the input loses focus.
+
+`size` (default = "md")<br>
+Sets the size of the input. Options: `sm`, `md`, `lg`.
+
+`disabled` (bool)<br>
+Makes the input disabled.
+
+`className` (string)<br>
+One or more optional classnames to apply to the input.
+
+`maxLength` (number or string)<br>
+Sets the `maxLength` attribute on the input.
+
+`id` (string)<br>
+Sets an `id` attribute on the input.
+
+`errorMessage` (string)<br>
+Sets the input to be invalid and have red error message text below.
+
+### DropdownButton
+
+```jsx
+import { DropdownButton } from "nucleo-toolkit";
+```
+
+**Props**
+
+`children`<br>
+The content rendered inside the button (ideally a text string)
+
+`options` (boolean)<br>
+An array of strings or objects used to render the options in the dropdown. If using an array of objects, each object must have a `label` and `value` property. You may also specify a `disabled` property to make an option disabled.
+
+`onClick` (function)<br>
+Function called when a dropdown option is clicked. Receives a single parameter of the option string or option.value.
+
 ### classNames
 
 A simple JS utility for conditionally joining classnames together into a single string. There is no limit to the number of arguments it can be passed. All arguments must be a string or object.
@@ -79,19 +154,16 @@ classNames(
 // returns "btn active test"
 ```
 
-### OtpInput
+### uniqueId
+
+Returns a unique ID string, using a custom prefix. Inspired by Lodash _.uniqueId.
 
 ```jsx
-import { OtpInput } from "nucleo-toolkit";
+import { uniqueId } from "nucleo-toolkit";
+
+uniqueId("lorem-");
+// returns "lorem-3"
 ```
-
-**Props:**
-
-`inputQty` (default: 6)<br>
-The number of input fields to display
-
-`correctOtp`<br>
-The correct OTP to compare against
 
 ## Demo
 

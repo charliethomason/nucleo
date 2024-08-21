@@ -1,0 +1,56 @@
+.textbox {
+  appearance: none;
+  background-color: $white;
+  border: 1px solid $charcoal-grey;
+  border-radius: 4px;
+  color: $charcoal-grey;
+  font: 14px/20px Arial, sans-serif;
+  outline: none;
+  padding: 5px;
+  resize: none;
+
+  &::placeholder {
+    color: $smoke-grey;
+  }
+  &:hover {
+    background-color: $alabaster-grey;
+  }
+  &:focus {
+    border-color: $jade-green;
+  }
+  &:disabled {
+    background-color: $alabaster-grey;
+    border-color: $cloud-grey;
+    color: $smoke-grey;
+    cursor: not-allowed;
+  }
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &--sm {
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px 5px;
+  }
+  &--lg {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 7px 14px;
+  }
+  &--invalid {
+    border-color: $deadpool-red;
+
+    &:focus {
+      border-color: $deadpool-red;
+    }
+  }
+
+  &-error {
+    color: $deadpool-red;
+    font: 14px/20px Arial, sans-serif;
+    margin-top: 5px;
+  }
+}

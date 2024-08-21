@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { Button, classNames, OtpInput } from "../src/index.js";
+import {
+  Button,
+  classNames,
+  OtpInput,
+  Input,
+  DropdownButton
+} from "src/index";
 import "./demo.css";
 
 const App = () => {
+  const [input1, setInput1] = useState("");
+  const [input2, setInput2] = useState("12345");
+  const [input3, setInput3] = useState("");
+  const [input4, setInput4] = useState("");
+  const [dropdown1, setDropdown1] = useState("Dropdown Button");
+
   const int = 3;
   const customClass = undefined;
   const dynamicClassNames = classNames("always-true", customClass, {
@@ -16,6 +28,13 @@ const App = () => {
     { "active": true },
     "test"
   );
+  const optionsArr1 = [
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 4",
+    "Option 5"
+  ];
   return (
     <main className="wrapper">
       <h1>Nucleo Toolkit</h1>
@@ -33,15 +52,39 @@ const App = () => {
         <Button size="sm" onClick={() => alert("Hello, World!")}>Small</Button>&nbsp;
         <Button size="lg" onClick={() => alert("Hello, World!")}>Large</Button>
       </div>
+      <h2>DropdownButton</h2>
+      <div className="canvas">
+        <DropdownButton options={optionsArr1} onClick={val => setDropdown1(val)}>{dropdown1}</DropdownButton>
+      </div>
       <h2>classNames</h2>
       <div className="canvas">
         {dynamicClassNames}<br />
         {anotherClass}
       </div>
-        <h2>OtpInput</h2>
-        <div className="canvas">
-          <OtpInput length={6} onChange={console.log} />
-        </div>
+      <h2>Input</h2>
+      <div className="canvas">
+        <Input placeholder="Enter text..." value={input1} onChange={({ target }) => setInput1(target.value)} />
+      </div>
+      <div className="canvas">
+        <Input size="sm" value="small" />&nbsp;
+        <Input size="lg" value="large" />
+      </div>
+      <div className="canvas">
+        <Input disabled value="Disabled input" onChange={() => {}} />
+      </div>
+      <div className="canvas">
+        <Input placeholder="Enter only 5 numbers" value={input2} maxLength={5} onChange={({ target }) => setInput2(target.value)} />
+      </div>
+      <div className="canvas">
+        <Input placeholder="Enter text..." value={input3} onChange={({ target }) => setInput3(target.value)} errorMessage={!input3 ? "Must enter a value" : null} />
+      </div>
+      <div className="canvas">
+        <Input placeholder="Enter text..." type="textarea" value={input4} onChange={({ target }) => setInput4(target.value)} />
+      </div>
+      <h2>OtpInput</h2>
+      <div className="canvas">
+        <OtpInput length={6} onChange={console.log} />
+      </div>
     </main>
   )
 };

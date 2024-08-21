@@ -36,6 +36,12 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+    alias: {
+      src: path.resolve("./src"),
+    }
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "nucleo.css"
