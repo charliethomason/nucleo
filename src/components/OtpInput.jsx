@@ -25,8 +25,13 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
     if (e.target.value.length === 1 && index + 1 < inputQty) {
       inputRefs.current[index + 1]?.focus();
     }
+
     if (e.target.value.length > 1) {
-      handlePaste(e.target.value, index);
+      handlePaste(e);
+    }
+    // Prevent entering more than 1 character in final input
+    if (e.target.value.length > 1 && index === inputQty - 1) {
+      inputRefs.current[index].value = e.target.value[0];
     }
     updateInput();
   };
@@ -48,6 +53,9 @@ export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
   };
 
   const handlePaste = (e) => {
+    if (!e.clipboardData) {
+      return;
+    }
     e.preventDefault();
     const pastedData = e.clipboardData.getData("text").slice(0, inputQty);
 
