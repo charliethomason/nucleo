@@ -1,8 +1,10 @@
 .btn {
+  align-items: center;
   background-color: $cloud-grey;
   border: 2px solid $cloud-grey;
   border-radius: 4px;
   color: $charcoal-grey;
+  display: inline-flex;
   font: 14px/20px Arial, sans-serif;
   outline: none;
   padding: 5px 10px;

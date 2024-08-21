@@ -4,11 +4,18 @@ import {
   Button,
   classNames,
   OtpInput,
-  Input
-} from "../src/index.js";
+  Input,
+  DropdownButton
+} from "src/index";
 import "./demo.css";
 
 const App = () => {
+  const [input1, setInput1] = useState("");
+  const [input2, setInput2] = useState("12345");
+  const [input3, setInput3] = useState("");
+  const [input4, setInput4] = useState("");
+  const [dropdown1, setDropdown1] = useState("Dropdown Button");
+
   const int = 3;
   const customClass = undefined;
   const dynamicClassNames = classNames("always-true", customClass, {
@@ -21,10 +28,13 @@ const App = () => {
     { "active": true },
     "test"
   );
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("12345");
-  const [input3, setInput3] = useState("");
-  const [input4, setInput4] = useState("");
+  const optionsArr1 = [
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 4",
+    "Option 5"
+  ];
   return (
     <main className="wrapper">
       <h1>Nucleo Toolkit</h1>
@@ -41,6 +51,10 @@ const App = () => {
       <div className="canvas">
         <Button size="sm" onClick={() => alert("Hello, World!")}>Small</Button>&nbsp;
         <Button size="lg" onClick={() => alert("Hello, World!")}>Large</Button>
+      </div>
+      <h2>DropdownButton</h2>
+      <div className="canvas">
+        <DropdownButton options={optionsArr1} onClick={val => setDropdown1(val)}>{dropdown1}</DropdownButton>
       </div>
       <h2>classNames</h2>
       <div className="canvas">
