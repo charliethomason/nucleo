@@ -5,3 +5,4 @@ node_modules/
 package-lock.json
 webpack.config.dev.js
 webpack.config.prod.js
+.nvmrc
