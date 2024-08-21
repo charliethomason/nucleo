@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { keyCodes } from "../utils/keyCodes";
-import "../styles/otpInput.scss";
 
 export const OtpInput = ({ inputQty = 6, onSubmit, correctOtp }) => {
   const [otp, setOtp] = useState("");

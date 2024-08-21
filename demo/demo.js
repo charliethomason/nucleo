@@ -1,10 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-
-import "../src/styles/nucleo.scss";
-import "./demo.css";
-
 import { Button, classNames, OtpInput } from "../src/index.js";
+import "./demo.css";
 
 const App = () => {
   const int = 3;
